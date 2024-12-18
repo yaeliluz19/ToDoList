@@ -16,13 +16,17 @@ const Login = () => {
         username,
         password,
       });
-
       sessionStorage.removeItem('token');
       sessionStorage.setItem('token', response.data.token);
-      
       navigate('/');
     } catch (error) {
-      setError('Invalid username or password.');
+      if (error.response && error.response.status === 404) {
+        
+        setError('User not found. Please register.');
+        navigate('/signup');  
+      } else {
+        setError('Invalid username or password.');
+      }
     }
   };
 

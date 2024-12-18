@@ -144,12 +144,16 @@ app.MapDelete("/{id}", [Microsoft.AspNetCore.Authorization.Authorize] async (int
 app.MapPost("/login", async (User loginRequest, ToDoDbContext dbContext) =>
 {
     var user = await dbContext.Users.SingleOrDefaultAsync(u => u.Username == loginRequest.Username);
-    if (user == null || !BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.Password))
+    if (user == null)
+    {
+        return Results.NotFound(new { Message = "User not found. Please register." });
+    }
+    
+    if (!BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.Password))
     {
         return Results.Unauthorized();
     }
 
-    // Generate JWT
     var claims = new[]
     {
         new Claim(ClaimTypes.Name, user.Username),

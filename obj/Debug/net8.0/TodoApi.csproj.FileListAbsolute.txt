@@ -219,3 +219,4 @@ D:\yael-practicode\פרקטיקוד\TodoApi\bin\Debug\net8.0\Microsoft.IdentityM
 D:\yael-practicode\פרקטיקוד\TodoApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\yael-practicode\פרקטיקוד\TodoApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\yael-practicode\פרקטיקוד\TodoApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\yael-practicode\פרקטיקוד\TodoApi\obj\Debug\net8.0\TodoApi.sourcelink.json
