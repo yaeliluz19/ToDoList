@@ -33,18 +33,3 @@ Adds a new task to the list.
   "title": "New Task",
   "description": "Description of the task"
 }
-### 3. **Update Task**
-
-**Route:**  
-`PUT /api/todolist/{id}`
-
-**Description:**  
-Updates an existing task by its ID.
-
-**Request Example:**
-```json
-{
-  "title": "Updated Task",
-  "description": "Updated description of the task",
-  "completed": true
-}
